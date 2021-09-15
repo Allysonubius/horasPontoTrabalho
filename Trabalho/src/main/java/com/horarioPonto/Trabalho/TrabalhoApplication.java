@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrabalhoApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(TrabalhoApplication.class, args)
-		;
+		SpringApplication.run(TrabalhoApplication.class, args);
 	}
 
 }

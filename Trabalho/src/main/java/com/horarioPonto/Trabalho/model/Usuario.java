@@ -1,16 +1,16 @@
-package Live.model;
+package com.horarioPonto.Trabalho.Model;
 
+import java.math.*;
 import java.time.*;
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-
-import com.ibm.icu.math.*;
 import lombok.*;
 
 @Data
 @Builder
+@Entity
 public class Usuario {
-    
+
+    @Id
     private Long id;
 
     @ManyToOne
@@ -25,7 +25,7 @@ public class Usuario {
 
     @ManyToOne
     private JornadaTrabalho jornadaTrabalho;
-    private BigDecimal tolerancia;    
+    private BigDecimal tolerancia;
     private LocalDateTime inicioJornada;
     private LocalDateTime fimJornada;
 }
