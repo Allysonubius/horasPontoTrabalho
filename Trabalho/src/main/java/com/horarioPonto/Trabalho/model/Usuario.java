@@ -6,6 +6,9 @@ import javax.persistence.*;
 import lombok.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 @Builder
 @Entity
 public class Usuario {
@@ -19,6 +22,7 @@ public class Usuario {
 
     @ManyToOne
     private Empresa empresa;
+    private String cpj;
 
     @ManyToOne
     private NivelAcesso nivelAcesso;

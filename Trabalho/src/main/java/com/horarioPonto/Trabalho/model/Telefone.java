@@ -3,8 +3,11 @@ package com.horarioPonto.Trabalho.Model;
 import lombok.*;
 import javax.persistence.*;
 
-@Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Builder
 @Entity
 public class Telefone {
 
