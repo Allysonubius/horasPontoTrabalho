@@ -22,7 +22,7 @@ public class SwaggerConfig {
     public Docket apiAdmin() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dio.live"))
+                .apis(RequestHandlerSelectors.basePackage("com.horarioPonto.Trabalho"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiInfo())

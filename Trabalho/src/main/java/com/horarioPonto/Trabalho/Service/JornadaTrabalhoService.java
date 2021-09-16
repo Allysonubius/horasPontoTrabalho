@@ -1,7 +1,7 @@
 package com.horarioPonto.Trabalho.Service;
 
-import com.horarioPonto.Trabalho.Model.*;
 import com.horarioPonto.Trabalho.Repository.*;
+import com.horarioPonto.Trabalho.model.JornadaTrabalho;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import java.util.*;

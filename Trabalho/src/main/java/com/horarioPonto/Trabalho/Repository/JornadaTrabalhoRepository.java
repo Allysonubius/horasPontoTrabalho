@@ -1,8 +1,7 @@
 package com.horarioPonto.Trabalho.Repository;
 
-import com.horarioPonto.Trabalho.Model.*;
+import com.horarioPonto.Trabalho.model.JornadaTrabalho;
 import org.springframework.data.jpa.repository.*;
-import org.springframework.data.jpa.repository.config.*;
 import org.springframework.stereotype.*;
 
 @Repository

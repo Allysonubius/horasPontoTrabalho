@@ -1,4 +1,4 @@
-package com.horarioPonto.Trabalho.Model;
+package com.horarioPonto.Trabalho.model;
 
 import javax.persistence.*;
 import lombok.*;

@@ -1,4 +1,4 @@
-package com.horarioPonto.Trabalho.Model;
+package com.horarioPonto.Trabalho.model;
 
 import java.math.*;
 import java.time.*;
