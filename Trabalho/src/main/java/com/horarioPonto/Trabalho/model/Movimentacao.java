@@ -12,6 +12,7 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "MOVIMENTACAO")
 public class Movimentacao {
 
     @AllArgsConstructor

@@ -9,10 +9,11 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "JORNADA_TRABALHO")
 public class JornadaTrabalho  {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String descricao;
 }

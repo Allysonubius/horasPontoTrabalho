@@ -9,9 +9,11 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "TIPO_DATA")
 public class TipoData {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;    
 }

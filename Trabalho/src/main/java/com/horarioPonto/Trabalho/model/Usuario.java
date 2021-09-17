@@ -11,9 +11,11 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "USUARIO")
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -23,6 +25,9 @@ public class Usuario {
     @ManyToOne
     private Empresa empresa;
     private String cpj;
+
+    @ManyToOne
+    private EnderecoUsuario enderecoUsuario;
 
     @ManyToOne
     private NivelAcesso nivelAcesso;

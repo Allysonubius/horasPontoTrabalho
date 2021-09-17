@@ -9,12 +9,15 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Builder
 @Entity
-@Table(name = "TELEFONE")
-public class Telefone {
+@Table(name = "ENDERECO_USUARIO")
+public class EnderecoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTelefone;
-    private String celular;
-    private String telefone;
+    private Long idEndereco;
+    private String endereco;
+    private String bairro;
+    private String numeroCasa;
+    private String cidade;
+    private String estado;
 }

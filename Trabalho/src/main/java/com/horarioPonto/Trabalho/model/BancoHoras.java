@@ -12,6 +12,7 @@ import java.time.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "BANCO_HORAS")
 public class BancoHoras {
 
     @AllArgsConstructor

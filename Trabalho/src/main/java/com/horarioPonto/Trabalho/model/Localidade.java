@@ -9,9 +9,11 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @Entity
+@Table(name = "LOCALIDADE")
 public class Localidade {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne
