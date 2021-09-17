@@ -5,10 +5,13 @@ import com.horarioPonto.Trabalho.model.JornadaTrabalho;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.util.*;
 
 @RestController
 @RequestMapping(value = "/jornada")
+@Api(value = "API REST Jornada de trabalho")
 public class JornadaTrabalhoController {
 
     @Autowired
@@ -20,8 +23,10 @@ public class JornadaTrabalhoController {
     }
 
     @GetMapping(value = "/list")
-    public List<JornadaTrabalho> getJornadaList(){
-        return  jornadaTrabalhoService.findAll();
+    @ApiOperation(value = "API REST Consulta Jornada de Trabalho")
+    public ResponseEntity<List<JornadaTrabalho>> getJornadaList(){
+        List<JornadaTrabalho> getJornadaTrabalho = this.jornadaTrabalhoService.findAll();
+        return  ResponseEntity.ok().body(getJornadaTrabalho);
     }
 
     @GetMapping(value ="/{idJornada}")

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class JornadaTrabalho {
+public class JornadaTrabalho  {
 
     @Id
     @GeneratedValue
