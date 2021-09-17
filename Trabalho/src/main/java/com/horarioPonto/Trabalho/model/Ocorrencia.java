@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class Ocorrencia {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String nome;
     private String descricao;

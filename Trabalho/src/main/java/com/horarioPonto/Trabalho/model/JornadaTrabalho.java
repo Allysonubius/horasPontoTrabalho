@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class JornadaTrabalho  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String descricao;
 }

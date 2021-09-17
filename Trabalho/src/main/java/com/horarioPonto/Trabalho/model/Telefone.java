@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class Telefone {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTelefone;
     private String celular;
     private String telefone;

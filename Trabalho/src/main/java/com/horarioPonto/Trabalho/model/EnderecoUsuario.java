@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class EnderecoUsuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEndereco;
     private String endereco;
     private String bairro;

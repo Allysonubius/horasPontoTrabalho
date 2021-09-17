@@ -18,12 +18,14 @@ public class JornadaTrabalhoController {
     JornadaTrabalhoService jornadaTrabalhoService;
 
     @PostMapping(value = "/update")
-    public JornadaTrabalho createJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
-        return jornadaTrabalhoService.saveJornada(jornadaTrabalho);
+    @ApiOperation(value = "API REST Realiza a inserção e atualização de Jornada de Trabalho")
+    public ResponseEntity<List<JornadaTrabalho>> createJornada(@RequestBody List<JornadaTrabalho> jornadaTrabalho) {
+        List<JornadaTrabalho> createJornadaTrabalhos = this.jornadaTrabalhoService.createJornada(jornadaTrabalho);
+        return ResponseEntity.ok().body(createJornadaTrabalhos);
     }
 
     @GetMapping(value = "/list")
-    @ApiOperation(value = "API REST Consulta Jornada de Trabalho")
+    @ApiOperation(value = "API REST Consulta todas as Jornada de Trabalho")
     public ResponseEntity<List<JornadaTrabalho>> getJornadaList(){
         List<JornadaTrabalho> getJornadaTrabalho = this.jornadaTrabalhoService.findAll();
         return  ResponseEntity.ok().body(getJornadaTrabalho);
