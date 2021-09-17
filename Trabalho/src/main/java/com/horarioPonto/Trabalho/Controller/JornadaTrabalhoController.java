@@ -14,7 +14,7 @@ public class JornadaTrabalhoController {
     @Autowired
     JornadaTrabalhoService jornadaTrabalhoService;
 
-    @PostMapping(value = "/create")
+    @PostMapping(value = "/update")
     public JornadaTrabalho createJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
         return jornadaTrabalhoService.saveJornada(jornadaTrabalho);
     }
@@ -29,7 +29,7 @@ public class JornadaTrabalhoController {
         return ResponseEntity.ok(jornadaTrabalhoService.getById(idJornada).orElseThrow(() -> new NoSuchElementException("Not found - ERROR 404")));
     }
 
-    @PutMapping(value = "/update" )
+    @PutMapping(value = "/create" )
     public JornadaTrabalho updateJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
         return jornadaTrabalhoService.updateJornada(jornadaTrabalho);
     }
