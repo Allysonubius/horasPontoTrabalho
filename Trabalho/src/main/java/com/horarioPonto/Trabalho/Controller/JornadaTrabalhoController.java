@@ -20,7 +20,7 @@ public class JornadaTrabalhoController {
     @PostMapping(value = "/update")
     @ApiOperation(value = "API REST Realiza a inserção e atualização de Jornada de Trabalho")
     public ResponseEntity<List<JornadaTrabalho>> createJornada(@RequestBody List<JornadaTrabalho> jornadaTrabalho) {
-        List<JornadaTrabalho> createJornadaTrabalhos = this.jornadaTrabalhoService.createJornada(jornadaTrabalho);
+        List<JornadaTrabalho> createJornadaTrabalhos = this.jornadaTrabalhoService.updateJornada(jornadaTrabalho);
         return ResponseEntity.ok().body(createJornadaTrabalhos);
     }
 
@@ -31,20 +31,19 @@ public class JornadaTrabalhoController {
         return  ResponseEntity.ok().body(getJornadaTrabalho);
     }
 
-    @GetMapping(value ="/{idJornada}")
+    @GetMapping(value ="/list/{idJornada}")
+    @ApiOperation(value = "API REST Consulta Jornada de trabalho por Id")
     public ResponseEntity<JornadaTrabalho> getJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {
-        return ResponseEntity.ok(jornadaTrabalhoService.getById(idJornada).orElseThrow(() -> new NoSuchElementException("Not found - ERROR 404")));
-    }
-
-    @PutMapping(value = "/create" )
-    public JornadaTrabalho updateJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
-        return jornadaTrabalhoService.updateJornada(jornadaTrabalho);
+        return ResponseEntity.ok(this.jornadaTrabalhoService.getById(idJornada).orElseThrow(() -> 
+            new NoSuchElementException("Não encontrado" ))
+        );
     }
 
     @DeleteMapping(value ="/delete/{idJornada}")
-    public void ResponseEntitydeleteJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {
+    @ApiOperation(value = "API REST Deleta uma Jornada de Trabalho por Id")
+    public void deleteJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {
         try {
-            jornadaTrabalhoService.deleteJornada(idJornada);
+            this.jornadaTrabalhoService.deleteJornada(idJornada);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

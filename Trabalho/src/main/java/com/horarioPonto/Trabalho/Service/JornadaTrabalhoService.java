@@ -16,29 +16,28 @@ public class JornadaTrabalhoService {
     @Autowired
     public JornadaTrabalhoService(JornadaTrabalhoRepository jornadaTrabalhoRepository){
     }
-
-    public JornadaTrabalho saveJornada(JornadaTrabalho jornadaTrabalho){
-        return jornadaTrabalhoRepository.save(jornadaTrabalho);
+    
+    // METODO POST
+    @Transactional(rollbackOn = Exception.class)
+    public List<JornadaTrabalho> updateJornada(List<JornadaTrabalho> jornadaTrabalho) {
+        return this.jornadaTrabalhoRepository.saveAll(jornadaTrabalho);
     }
 
+    // METODO GET
     @Transactional(rollbackOn = Exception.class)
     public List<JornadaTrabalho> findAll(){
         return jornadaTrabalhoRepository.findAll();
     }
-
+    
+    // METODO GET por ID
     @Transactional(rollbackOn = Exception.class)
     public Optional<JornadaTrabalho> getById(long idJornada) {
         return jornadaTrabalhoRepository.findById(idJornada);
     }
 
+    // METODO DELETE
     @Transactional(rollbackOn = Exception.class)
-    public JornadaTrabalho updateJornada(JornadaTrabalho jornadaTrabalho){
-        return jornadaTrabalhoRepository.save(jornadaTrabalho);
+    public void deleteJornada(Long jornadaTrabalho) {
+        jornadaTrabalhoRepository.deleteById(jornadaTrabalho);
     }
-
-    @Transactional(rollbackOn = Exception.class)
-    public void deleteJornada(long idJornada) {
-        jornadaTrabalhoRepository.deleteById(idJornada);
-    }
-
 }
