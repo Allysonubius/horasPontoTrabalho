@@ -12,15 +12,11 @@ public class JornadaTrabalhoService {
 
     @Autowired
     JornadaTrabalhoRepository jornadaTrabalhoRepository;
-
-    @Autowired
-    public JornadaTrabalhoService(JornadaTrabalhoRepository jornadaTrabalhoRepository){
-    }
     
     // METODO POST
     @Transactional(rollbackOn = Exception.class)
-    public List<JornadaTrabalho> updateJornada(List<JornadaTrabalho> jornadaTrabalho) {
-        return this.jornadaTrabalhoRepository.saveAll(jornadaTrabalho);
+    public List<JornadaTrabalho> updateJornada(List<JornadaTrabalho> jornadaTrabalhoPost) {
+        return this.jornadaTrabalhoRepository.saveAll(jornadaTrabalhoPost);
     }
 
     // METODO GET
@@ -37,7 +33,7 @@ public class JornadaTrabalhoService {
 
     // METODO DELETE
     @Transactional(rollbackOn = Exception.class)
-    public void deleteJornada(Long jornadaTrabalho) {
-        jornadaTrabalhoRepository.deleteById(jornadaTrabalho);
+    public void deleteJornada(Long jornadaTrabalhoDelete) {
+        jornadaTrabalhoRepository.deleteById(jornadaTrabalhoDelete);
     }
 }

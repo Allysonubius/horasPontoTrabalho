@@ -41,9 +41,9 @@ public class JornadaTrabalhoController {
 
     @DeleteMapping(value ="/delete/{idJornada}")
     @ApiOperation(value = "API REST Deleta uma Jornada de Trabalho por Id")
-    public void deleteJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {
+    public void deleteJornadaById(@PathVariable("idJornada") Long idJornadaDelete) throws Exception {
         try {
-            this.jornadaTrabalhoService.deleteJornada(idJornada);
+            this.jornadaTrabalhoService.deleteJornada(idJornadaDelete);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
