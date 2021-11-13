@@ -31,7 +31,7 @@ public class JornadaTrabalhoService {
         return jornadaTrabalhoRepository.findById(idJornada);
     }
 
-    // METODO DELETE
+    // METODO DELETE por ID
     @Transactional(rollbackOn = Exception.class)
     public void deleteJornada(Long jornadaTrabalhoDelete) {
         jornadaTrabalhoRepository.deleteById(jornadaTrabalhoDelete);
