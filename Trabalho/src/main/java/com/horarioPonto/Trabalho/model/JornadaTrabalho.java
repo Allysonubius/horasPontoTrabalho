@@ -4,6 +4,7 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +20,7 @@ public class JornadaTrabalho  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 50 , max = 250)
     private String descricao;
 
     private BigDecimal tolerancia;

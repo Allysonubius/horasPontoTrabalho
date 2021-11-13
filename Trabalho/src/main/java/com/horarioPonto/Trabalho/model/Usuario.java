@@ -1,6 +1,10 @@
 package com.horarioPonto.Trabalho.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import lombok.*;
 
 @Data
@@ -21,12 +25,16 @@ public class Usuario {
     @JoinColumn(name = "CATEGORIA_USUARIO_ID")
     private CategoriaUsuario categoriaUsuario;
 
+    @NotNull(message = "O campo NOME não deve ser vazio !")
+    @Size(min = 50 , max = 250)
     private String nome;
 
     @ManyToOne
     @JoinColumn(name = "EMPRESA_ID")
     private Empresa empresa;
     
+    @NotEmpty(message = "O campo CPF não deve ser vazio !")
+    @Size(min = 11 , max = 11)
     private String cpf;
 
     @ManyToOne

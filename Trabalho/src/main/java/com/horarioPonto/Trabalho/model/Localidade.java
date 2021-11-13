@@ -1,6 +1,8 @@
 package com.horarioPonto.Trabalho.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 import lombok.*;
 
 @Data
@@ -21,5 +23,6 @@ public class Localidade {
     @JoinColumn(name = "NIVEL_ACESSO_ID")
     private NivelAcesso nivelAcesso;
 
+    @Size(min = 50 , max = 250)
     private String descricao;
 }

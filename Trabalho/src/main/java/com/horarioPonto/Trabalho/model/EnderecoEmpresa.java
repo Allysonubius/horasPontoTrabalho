@@ -11,8 +11,8 @@ import javax.validation.constraints.Size;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 @Entity
-@Table(name = "ENDERECO_USUARIO")
-public class EnderecoUsuario {
+@Table(name = "ENDERECO_EMPRESA")
+public class EnderecoEmpresa {
 
     @Id
     @EqualsAndHashCode.Include

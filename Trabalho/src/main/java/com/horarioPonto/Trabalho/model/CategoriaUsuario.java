@@ -2,6 +2,7 @@ package com.horarioPonto.Trabalho.model;
 
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -17,5 +18,6 @@ public class CategoriaUsuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 50 , max = 250)
     private String descricao;
 }
