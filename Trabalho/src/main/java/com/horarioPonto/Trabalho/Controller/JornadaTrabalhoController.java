@@ -47,7 +47,6 @@ public class JornadaTrabalhoController {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-        ResponseEntity.ok();
     }
 
 }
