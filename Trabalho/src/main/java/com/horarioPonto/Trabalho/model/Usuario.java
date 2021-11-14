@@ -5,6 +5,10 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+import org.hibernate.validator.constraints.br.CPF;
+
 import lombok.*;
 
 @Data
@@ -25,6 +29,7 @@ public class Usuario {
     @JoinColumn(name = "CATEGORIA_USUARIO_ID")
     private CategoriaUsuario categoriaUsuario;
 
+
     @NotNull(message = "O campo NOME não deve ser vazio !")
     @Size(min = 50 , max = 250)
     private String nome;
@@ -35,10 +40,12 @@ public class Usuario {
     
     @NotEmpty(message = "O campo CPF não deve ser vazio !")
     @Size(min = 11 , max = 11)
+    @CPF(groups = Usuario.class)
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name = "ENDERECO_EMPRESA_ID")
+    @JoinColumn(name = "ENDERECO_ID")
+    @NotFound(action = NotFoundAction.IGNORE)
     private EnderecoUsuario enderecoUsuario;
 
     @ManyToOne

@@ -2,13 +2,9 @@ package com.horarioPonto.Trabalho.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 import javax.transaction.Transactional;
-
 import com.horarioPonto.Trabalho.Repository.EmpresaRespository;
-
 import com.horarioPonto.Trabalho.model.Empresa;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +35,6 @@ public class EmpresaService {
     // METODO DELETE por ID
     @Transactional(rollbackOn = Exception.class)
     public void deleteEmpresa(Long empresaDelete){
-        empresaRespository.deleteById(empresaDelete);
+        this.empresaRespository.deleteById(empresaDelete);
     }
 }
