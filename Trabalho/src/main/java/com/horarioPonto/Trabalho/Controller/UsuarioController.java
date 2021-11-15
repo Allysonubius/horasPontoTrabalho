@@ -43,7 +43,7 @@ public class UsuarioController {
     @ApiOperation(value = "API REST Consulta de usuarios por ID")
     public ResponseEntity<Usuario> getUsuarioId(@PathVariable("idUsuario") Long idUsuarios) throws Exception{
         return ResponseEntity.ok(this.usuarioService.getByIdUsuario(idUsuarios).orElseThrow(() ->
-            new NoSuchElementException("Não encontrado"))
+            new NoSuchElementException("USUARIO NÂO ENCONTRADO " + idUsuarios))
         );
     }
 
@@ -51,9 +51,9 @@ public class UsuarioController {
     @ApiOperation(value = "API REST Deleta uma Usuario por ID")
     public void deleteUsuarioId(@PathVariable("idUsuario") Long idUsuarioDelete) throws Exception{
         try{
-            this.usuarioService.deleteUsuario(idUsuarioDelete);
+            usuarioService.getByIdUsuario(this.usuarioService.deleteUsuario(idUsuarioDelete));
         }catch(Exception e){
-            System.out.println(e.getMessage());
+            new NoSuchElementException("USUARIO INEXISTENTE " + idUsuarioDelete);
         }
     }
 }

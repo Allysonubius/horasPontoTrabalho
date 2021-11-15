@@ -26,7 +26,7 @@ public class Empresa {
     private String descricao;
 
     @NotEmpty(message = "O Campo CNPJ não pode ser vazio !")
-    @Size(min=13 ,max = 13)
+    @Size(min=14 ,max = 14)
     @CNPJ(groups = Empresa.class)
     private String cnpj;
 

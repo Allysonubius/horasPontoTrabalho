@@ -35,7 +35,7 @@ public class JornadaTrabalhoController {
     @ApiOperation(value = "API REST Consulta Jornada de trabalho por Id")
     public ResponseEntity<JornadaTrabalho> getJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {
         return ResponseEntity.ok(this.jornadaTrabalhoService.getById(idJornada).orElseThrow(() -> 
-            new NoSuchElementException("Não encontrado" ))
+            new NoSuchElementException("Não encontrado" + idJornada))
         );
     }
 

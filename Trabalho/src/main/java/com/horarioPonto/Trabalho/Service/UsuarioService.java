@@ -35,8 +35,9 @@ public class UsuarioService {
 
     //Metodo DELETE por ID
     @Transactional(rollbackOn = Exception.class)
-    public void deleteUsuario (Long usuarioDeleteID){
+    public Long deleteUsuario (Long usuarioDeleteID){
         this.usuarioRepository.deleteById(usuarioDeleteID);
+        return usuarioDeleteID;
     }
 
 }

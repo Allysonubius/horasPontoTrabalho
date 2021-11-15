@@ -44,7 +44,7 @@ public class EmpresaController {
     @ApiOperation(value = "API REST Consulta Empresa por ID")
     public ResponseEntity<Empresa> getByIdEmpresa(@PathVariable("idEmpresa") Long empresaId) throws Exception{
         return ResponseEntity.ok(this.empresaService.getByIdEmpresa(empresaId).orElseThrow(() ->
-            new NoSuchElementException("Não encontrado"))
+            new NoSuchElementException("NÂO ENCONTRADO " + empresaId))
         );
     }
 
