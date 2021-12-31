@@ -1,9 +1,7 @@
 package com.horarioPonto.Trabalho.model;
 
 import lombok.*;
-import java.math.BigDecimal;
 import java.sql.Time;
-import java.time.LocalDateTime;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
